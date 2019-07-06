@@ -5,7 +5,7 @@ class QueryPane extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div id="query-pane-div">
 				<p>Query Pane Placeholder</p>
 			</div>
 		)

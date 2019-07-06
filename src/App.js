@@ -12,7 +12,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		
+		// Perhaps get a word List? 
 	}
 
 	render () {

@@ -26,23 +26,30 @@ it should be centered on the page, have black background and have eight individu
 }
 /* This is each individual input box. Forced uppercase, no cursor, fixed size */
 .individual-block {
-	resize: none;
-	font-size: 92px;
-	font-weight: bold;
-	text-align: center;
-	width: 100px;
-	height: 120px;
-	overflow: hidden;
+	border-color: black;
+	border-radius: 5%;
 	border-style: solid;
 	border-width: 2px;
-	border-color: black;
-	text-transform: uppercase;
 	color: transparent;
-  text-shadow: 0px 0px 0px black;
+	font-size: 92px;
+	font-weight: bold;
+	height: 120px;
+	overflow: hidden;
+	resize: none;
+	text-align: center;
+	text-shadow: 0px 0px 0px black;
+	text-transform: uppercase;
+	width: 100px;
 }
 
 .individual-block:hover {
 	cursor: pointer;
 	background-color: lightblue;
+}
+
+/* This is where the query commands will be*/
+#query-pane-div {
+	border-style: solid;
+	margin-top: 2%;
 }
 
