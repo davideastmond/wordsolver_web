@@ -4,6 +4,7 @@ import './App.css';
 import CharBox from './filterbox';
 import InputPane from './inputPane';
 import { Component}  from 'react';
+import QueryPane from './querypane';
 
 class App extends Component {
 	constructor () {
@@ -11,13 +12,13 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		const elements = document.getElementById('input-pane');
-		console.log(elements.children);
+		
 	}
 
 	render () {
 		return (<div>
 		<InputPane/>
+		<QueryPane/>
 		</div>
 		)
 	}
