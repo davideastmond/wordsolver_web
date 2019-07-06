@@ -10,15 +10,15 @@ class App extends Component {
 		super ();
 	}
 
+	componentDidMount() {
+		const elements = document.getElementById('input-pane');
+		console.log(elements.children);
+	}
+
 	render () {
 		return (<div>
-			
 		<InputPane/>
-		
-			
 		</div>
-		
-		
 		)
 	}
 }

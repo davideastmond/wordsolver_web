@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class CharBox extends React.Component {
 
 	testOnClick = (e) => {
-
-		console.log(e.target);
+		console.log(this.props.index);
+		
 	}
 
 	render () {
