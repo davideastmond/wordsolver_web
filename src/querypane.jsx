@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Query from './query';
 
 class QueryPane extends React.Component {
 	/* The query pane is where all the commands are kept */
@@ -6,7 +7,7 @@ class QueryPane extends React.Component {
 	render() {
 		return (
 			<div id="query-pane-div">
-				<p>Query Pane Placeholder</p>
+				<button type="button" class="btn btn-outline-success">Basic Filter </button>
 			</div>
 		)
 	}
