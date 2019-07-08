@@ -14,10 +14,17 @@ A basic filter is something you'd type into the text input boxes (those squares)
 
 //ION
 
-Where the word is a 5-letter word ending in the characters ION. Hit the basic filter button and the word list will filter out to only
-show words that match that query.
+Where, in the above case, the word is a 5-letter word ending in the characters ION. Hit the basic filter button and the word list will filter everything out to only show words that match that query (ie 5-letter words ending in "ION").
 
 There will be various types of queries available, and they will be added via buttons that will appear in the query pane.
+
+## Tech skills
+
+Node.js
+React.js
+HTML / CSS / Javascript / maybe some jQuery? 
+
+And Web Workers - I'll use Webworkers to minimize blocking of the UI when the word list (which is quite large) is being loaded.
 
 ## Screen Captures
 ![Preliminary UI](https://github.com/davideastmond/wordsolver_web/blob/master/res/wordSolver.JPG?raw=true)
