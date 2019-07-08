@@ -20,7 +20,7 @@ show words that match that query.
 There will be various types of queries available, and they will be added via buttons that will appear in the query pane.
 
 ## Screen Captures
-Coming Soon
+![Preliminary UI](https://github.com/davideastmond/wordsolver_web/blob/master/res/wordSolver.JPG?raw=true)
 
 ## Installation
 
