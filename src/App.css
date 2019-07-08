@@ -32,6 +32,10 @@ it should be centered on the page, have black background and have eight individu
 	text-align: center;
 }
 
+#wordlist-pane-header {
+	text-align: center;
+}
+
 /* This is each individual input box. Forced uppercase, no cursor, fixed size */
 .individual-block {
 	border-color: black;
@@ -68,10 +72,20 @@ it should be centered on the page, have black background and have eight individu
 	margin-top: 2%;
 	padding: 10px 10px;
 	border-style: solid;
+	box-shadow: 5px 5px #494848;
 }
 
-#internal-wordlist-frame {
+#internal-wordlist-textarea {
 	resize: none;
 	text-transform: uppercase;
 	border-style: dashed;
+	height: 400px;
+	width: 100%;
+}
+
+#wordlist-pane-reset-button-div {
+	text-align: right;
+}
+#wordlist-pane-reset-button {
+
 }

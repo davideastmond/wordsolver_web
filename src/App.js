@@ -20,7 +20,7 @@ class App extends Component {
 		let jWordList = require('./dictionary.json');
 		
 		let filteredList = [];
-		const wordListTextBox = document.getElementById("internal-wordlist-frame");
+		const wordListTextBox = document.getElementById("internal-wordlist-textarea");
 		let bigString = "";
 		jWordList.forEach(element => {
 			if (element.length >= 3) {
@@ -28,7 +28,9 @@ class App extends Component {
 				filteredList.push(element);
 			}
 		});
-		wordListTextBox.value = bigString
+		const wordListCount = document.getElementById("internal-wordlist-woordlistcount");
+		wordListCount.value = filteredList.length.toString();
+		wordListTextBox.value = bigString;
 	
 	}
 

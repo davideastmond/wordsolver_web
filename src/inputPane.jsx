@@ -22,8 +22,12 @@ class InputPane extends React.Component {
 	render () {
 		return (
 			<div id="input-pane">
-				<CharBox index={0} funcPrintContents={this.printContents}/> <CharBox index={1} funcPrintContents={this.printContents} /> <CharBox index={2} funcPrintContents={this.printContents}/> <CharBox index={3} funcPrintContents={this.printContents}/> <CharBox index={4} funcPrintContents={this.printContents}/> <CharBox index={5} funcPrintContents={this.printContents}/> <CharBox index={6} funcPrintContents={this.printContents}/> <CharBox index={7} funcPrintContents={this.printContents}/>
-				
+				<CharBox index={0} funcPrintContents={this.printContents}/><CharBox index={1} funcPrintContents={this.printContents} />
+				<CharBox index={2} funcPrintContents={this.printContents}/><CharBox index={3} funcPrintContents={this.printContents}/>
+				<CharBox index={4} funcPrintContents={this.printContents}/><CharBox index={5} funcPrintContents={this.printContents}/>
+				<CharBox index={6} funcPrintContents={this.printContents}/><CharBox index={7} funcPrintContents={this.printContents}/>
+				<CharBox index={8} funcPrintContents={this.printContents}/><CharBox index={9} funcPrintContents={this.printContents}/>
+				<CharBox index={10} funcPrintContents={this.printContents}/><CharBox index={11} funcPrintContents={this.printContents}/>
 			</div>
 		)
 	}

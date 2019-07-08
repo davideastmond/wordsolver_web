@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import wordlist from './wordlist';
+
 class WordListPane extends React.Component {
 
 
 	render () {
 		return(
 			<div id="wordlist-pane">
-				<textarea id="internal-wordlist-frame" readOnly>
-					
+				<div id="wordlist-pane-header"> 
+					<h5> Word List </h5>
+				</div>
+				<textarea id="internal-wordlist-textarea" readOnly>
 				</textarea>
+				<div>
+					<h5 id="internal-wordlist-woordlistcount"> </h5>
+				</div>
+				<div id="wordlist-pane-reset-button-div">
+					<button id="wordlist-pane-reset-button" className="btn btn-info">Reset</button>
+				</div>
 			</div>
 		)
 	}
