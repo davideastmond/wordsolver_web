@@ -7,7 +7,10 @@ class QueryPane extends React.Component {
 	render() {
 		return (
 			<div id="query-pane-div">
-				<button type="button" class="btn btn-outline-success">Basic Filter </button>
+				<div id="query-pane-header"> 
+					<h5> Queries </h5>
+				</div>
+				<Query queryType="Basic Filter"/> <Query queryType="Intermediate Filter"/> <Query queryType="Advanced Filter"/>
 			</div>
 		)
 	}

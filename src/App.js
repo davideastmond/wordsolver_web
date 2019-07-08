@@ -5,7 +5,7 @@ import CharBox from './filterbox';
 import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
-
+import WordListPane from './wordlistpane';
 class App extends Component {
 	constructor () {
 		super ();
@@ -13,12 +13,30 @@ class App extends Component {
 
 	componentDidMount() {
 		// Perhaps get a word List? 
+		this.loadWordList();
+	}
+
+	loadWordList = () => {
+		let jWordList = require('./dictionary.json');
+		
+		let filteredList = [];
+		const wordListTextBox = document.getElementById("internal-wordlist-frame");
+		let bigString = "";
+		jWordList.forEach(element => {
+			if (element.length >= 3) {
+				bigString += element + " ";
+				filteredList.push(element);
+			}
+		});
+		wordListTextBox.value = bigString
+	
 	}
 
 	render () {
 		return (<div>
 		<InputPane/>
 		<QueryPane/>
+		<WordListPane/>
 		</div>
 		)
 	}

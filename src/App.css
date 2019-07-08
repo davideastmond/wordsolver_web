@@ -23,10 +23,15 @@ it should be centered on the page, have black background and have eight individu
 	box-shadow: 5px, 5px, chartreuse;
 }
 
-
 .charBox {
 		display: inline;
 }
+
+/* */
+#query-pane-header {
+	text-align: center;
+}
+
 /* This is each individual input box. Forced uppercase, no cursor, fixed size */
 .individual-block {
 	border-color: black;
@@ -53,8 +58,20 @@ it should be centered on the page, have black background and have eight individu
 
 /* This is where the query commands will be*/
 #query-pane-div {
-	padding: 2% 2%;
+	padding: 10px 10px;
 	border-style: solid;
 	margin-top: 2%;
+	box-shadow: 5px 5px #494848;
 }
 
+#wordlist-pane {
+	margin-top: 2%;
+	padding: 10px 10px;
+	border-style: solid;
+}
+
+#internal-wordlist-frame {
+	resize: none;
+	text-transform: uppercase;
+	border-style: dashed;
+}
