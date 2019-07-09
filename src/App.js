@@ -6,7 +6,7 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-import myworker from './wordlist.worker';
+
 
 class App extends Component {
 	constructor () {
@@ -15,22 +15,20 @@ class App extends Component {
 
 	componentDidMount() {
 		// Perhaps get a word List? 
-	
-		if (window.Worker) {
-			
-			let wordListWorker =  new myworker();
-	
-			const wordListData = require('./dictionary.json');
-			
-			wordListWorker.postMessage({data: wordListData});
-			console.log("Posted message to worker");
+		const wordList = document.getElementById('internal-wordlist-textarea');
+		console.log(wordList);
+		wordList.value = this.loadDefaultWordList();
+	}	
 
-			
-			wordListWorker.onmessage = (e) => {
-				const wordListDisplayBox = document.getElementById("internal-wordlist-textarea");
-				wordListDisplayBox.innerHTML = e.data;
-			};	
-		}
+	loadDefaultWordList () {
+		const wordList = require('./dictionary.json');
+		let bigList = "";
+		wordList.forEach((el) => {
+			if (el.length > 2 && el.length <= 12) {
+				bigList += el + " ";
+			}
+		});
+		return bigList;
 	}
 
 	render () {
