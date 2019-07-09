@@ -81,6 +81,7 @@ it should be centered on the page, have black background and have eight individu
 	border-style: dashed;
 	height: 400px;
 	width: 100%;
+	box-shadow: 4px 4px #494848;
 }
 
 #wordlist-pane-reset-button-div {

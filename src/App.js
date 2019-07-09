@@ -29,7 +29,7 @@ class App extends Component {
 			}
 		});
 		const wordListCount = document.getElementById("internal-wordlist-woordlistcount");
-		wordListCount.value = filteredList.length.toString();
+		wordListCount.innerHTML = `Word Count: ${filteredList.length.toString()}`;
 		wordListTextBox.value = bigString;
 	
 	}
