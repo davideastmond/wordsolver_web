@@ -17,7 +17,7 @@ A basic filter is something you'd type into the text input boxes (those rectangl
 
 //ION
 
-Where, in the above case, the word is a 5-letter word ending in the characters ION. Hit the basic filter button and the word list will filter everything out to only show words that match that query (ie, a 5-letter words ending in "ION").
+Where, in the above case, the word is a 5-letter word ending in the characters ION. Hit the basic filter button and the word list will filter everything out to only show words that match that query (ie, 5-letter words ending in "ION").
 
 There will be various types of queries available, and they will be added via buttons that will appear in the query pane.
 
