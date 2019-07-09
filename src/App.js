@@ -6,7 +6,7 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-
+import myworker from './wordlist.worker';
 
 class App extends Component {
 	constructor () {
@@ -18,7 +18,7 @@ class App extends Component {
 	
 		if (window.Worker) {
 			
-			let wordListWorker = new Worker("wordlist.worker.js");
+			let wordListWorker =  new myworker();
 	
 			const wordListData = require('./dictionary.json');
 			
