@@ -5,22 +5,7 @@ import CharBox from './filterbox';
 
 class InputPane extends React.Component {
 	// We'll return a carousel of eight large text boxes
-	componentDidMount() {
-		
-	}
-
-	printContents = (e) => {
-		/* This will print the contents of each textArea box 
-		This will be transformed into a function that gathers all the values of the individualBoxes and
-		perhaps stores them in an array*/
-		const ta_contents = document.getElementById("input-pane");
-		let arrayOfTextBoxValues = [];
-		for (let i = 0; i < ta_contents.children.length; i++) {
-			arrayOfTextBoxValues.push(ta_contents.children[i].children[0].value.toUpperCase());
-		}
-		console.log("Box Values", arrayOfTextBoxValues);
-	}
-
+	
 	handleKeyDownEvent = (e, indexInfo) => {
 	
 		// Handle the auto tabbing
@@ -70,25 +55,25 @@ class InputPane extends React.Component {
 				box = ReactDOM.findDOMNode(this.refs.box11);
 				box.childNodes[0].focus();
 				break;
-				default:
+			default:
 		}
 	}
 
 	render () {
 		return (
 			<div id="input-pane">
-				<CharBox index={0} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box0"/>
-				<CharBox index={1} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box1"/>
-				<CharBox index={2} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box2"/>
-				<CharBox index={3} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box3"/>
-				<CharBox index={4} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box4"/>
-				<CharBox index={5} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box5"/>
-				<CharBox index={6} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box6"/>
-				<CharBox index={7} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box7"/>
-				<CharBox index={8} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box8"/>
-				<CharBox index={9} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box9"/>
-				<CharBox index={10} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box10"/>
-				<CharBox index={11} funcPrintContents={this.printContents} handleKeyDownEvent={this.handleKeyDownEvent} ref="box11"/>
+				<CharBox index={0}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box0"/>
+				<CharBox index={1}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box1"/>
+				<CharBox index={2}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box2"/>
+				<CharBox index={3}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box3"/>
+				<CharBox index={4}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box4"/>
+				<CharBox index={5}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box5"/>
+				<CharBox index={6}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box6"/>
+				<CharBox index={7}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box7"/>
+				<CharBox index={8}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box8"/>
+				<CharBox index={9}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box9"/>
+				<CharBox index={10} handleKeyDownEvent={this.handleKeyDownEvent} ref="box10"/>
+				<CharBox index={11} handleKeyDownEvent={this.handleKeyDownEvent} ref="box11"/>
 			</div>
 		)
 	}

@@ -13,6 +13,7 @@ class App extends Component {
 		super ();
 		
 		this.state = {sortedWordList: []};
+		
 	}
 
 	componentDidMount() {
@@ -39,10 +40,19 @@ class App extends Component {
 		return ([bigList, wordCount]);
 	}
 
+	fetchInputArray (e, fetchedData) {
+		// This propogates up from child elements
+	}
+
+	getInputArray (filter_array) {
+		// This is in charge of getting the array of characters used for a filter
+		console.log("Filter array", filter_array);
+	}
+
 	render () {
 		return (<div>
 		<InputPane/>
-		<QueryPane/>
+		<QueryPane fetchInputArray={this.getInputArray}/>
 		<WordListPane/>
 		</div>
 		)

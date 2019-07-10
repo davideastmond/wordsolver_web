@@ -37,8 +37,6 @@ Node.js,
 React.js,
 HTML / CSS / Javascript / maybe some jQuery? 
 
-And Web Workers - I'll use Webworkers to minimize blocking of the UI when the word list (which is quite large) is being loaded.
-
 ## Screen Captures
 ![Preliminary UI](https://github.com/davideastmond/wordsolver_web/blob/master/res/wordSolver.JPG?raw=true)
 
