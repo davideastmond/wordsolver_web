@@ -40,13 +40,13 @@ class App extends Component {
 		return ([bigList, wordCount]);
 	}
 
-	fetchInputArray (e, fetchedData) {
-		// This propogates up from child elements
-	}
+	
 
-	getInputArray (filter_array) {
-		// This is in charge of getting the array of characters used for a filter
+	getInputArray (e, filter_array) {
+		// This is in charge of getting the array of characters used for a filter. This is passed down through props
 		console.log("Filter array", filter_array);
+
+		// We've now got a filter string and a query type
 	}
 
 	render () {

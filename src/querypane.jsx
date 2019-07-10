@@ -12,10 +12,14 @@ class QueryPane extends React.Component {
 
 		const ta_contents = document.getElementById("input-pane");
 		const myArray = this.getQueryPaneArray(ta_contents);
-		console.log("My Array line 15", myArray, queryData);
+
+		// I need to call the App level function that passes all relevent info
+		const myQueryObject = {queryArray: myArray, queryType: queryData};
+		this.props.fetchInputArray(e, myQueryObject);
 	}
 
 	getQueryPaneArray = (contents) => {
+		// Helper function ( local )
 		let arrayOfTextBoxValues = [];
 		for (let i = 0; i < contents.children.length; i++) {
 			arrayOfTextBoxValues.push(contents.children[i].children[0].value.toUpperCase());
