@@ -11,24 +11,32 @@ import WordListPane from './wordlistpane';
 class App extends Component {
 	constructor () {
 		super ();
+		
+		this.state = {sortedWordList: []};
 	}
 
 	componentDidMount() {
 		// Perhaps get a word List? 
+		console.log("App mounted!");
 		const wordList = document.getElementById('internal-wordlist-textarea');
-		console.log(wordList);
-		wordList.value = this.loadDefaultWordList();
+		const wordListCountDisplay = document.getElementById("internal-wordlist-woordlistcount");
+		const wordListData = this.loadDefaultWordList();
+		wordList.value = wordListData[0];
+		wordListCountDisplay.innerHTML = `Word Count: ${wordListData[1]}`;
 	}	
 
 	loadDefaultWordList () {
 		const wordList = require('./dictionary.json');
+		this.setState({sortedWordList: wordList});
 		let bigList = "";
+		let wordCount = 0;
 		wordList.forEach((el) => {
 			if (el.length > 2 && el.length <= 12) {
 				bigList += el + " ";
+				wordCount ++;
 			}
 		});
-		return bigList;
+		return ([bigList, wordCount]);
 	}
 
 	render () {

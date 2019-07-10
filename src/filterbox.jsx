@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 
 class CharBox extends React.Component {
 
-	testOnClick = (e) => {
-		this.props.funcPrintContents();
-		
+	sendKeyEvenWithIndex = (e) => {
+		this.props.handleKeyDownEvent(e, this.props.index);
 	}
 
 	render () {
 		return ( <div className= "charBox">
-			<textarea maxLength="1" className="individual-block" onClick={this.testOnClick}></textarea> 	
+			<textarea maxLength="1" className="individual-block" onKeyPress={this.sendKeyEvenWithIndex}></textarea> 	
 		</div>)
 	}
 }
