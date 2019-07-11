@@ -26,7 +26,8 @@ class App extends Component {
 		wordListCountDisplay.innerHTML = `Word Count: ${wordListData[1]}`;
 	}	
 
-	loadDefaultWordList () {
+	loadDefaultWordList = () => {
+		
 		const wordList = require('./dictionary.json');
 		this.setState({sortedWordList: wordList});
 		let bigList = "";
@@ -40,20 +41,19 @@ class App extends Component {
 		return ([bigList, wordCount]);
 	}
 
-	
-
-	getInputArray (e, filter_array) {
+	getInputArray = (e, filter_array) =>  {
 		// This is in charge of getting the array of characters used for a filter. This is passed down through props
 		console.log("Filter array", filter_array);
 
 		// We've now got a filter string and a query type
+		// console.log(this.state.sortedWordList);
 	}
 
 	render () {
 		return (<div>
-		<InputPane/>
-		<QueryPane fetchInputArray={this.getInputArray}/>
-		<WordListPane/>
+			<InputPane/>
+			<QueryPane fetchInputArray={this.getInputArray}/>
+			<WordListPane reloadWordList={this.loadDefaultWordList}/>
 		</div>
 		)
 	}

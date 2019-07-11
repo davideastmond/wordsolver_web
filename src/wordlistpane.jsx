@@ -15,7 +15,7 @@ class WordListPane extends React.Component {
 					<h5 id="internal-wordlist-woordlistcount"> </h5>
 				</div>
 				<div id="wordlist-pane-reset-button-div">
-					<button id="wordlist-pane-reset-button" className="btn btn-info">Reset</button>
+					<button id="wordlist-pane-reset-button" className="btn btn-info" onClick={this.props.reloadWordList}>Reset</button>
 				</div>
 			</div>
 		)

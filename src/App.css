@@ -27,6 +27,7 @@ it should be centered on the page, have black background and have eight individu
 }
 .charBox {
 	display: inline;
+
 }
 
 /* */
@@ -44,6 +45,7 @@ it should be centered on the page, have black background and have eight individu
 	border-radius: 5%;
 	border-style: solid;
 	border-width: 2px;
+	box-shadow: 5px 5px black;
 	color: transparent;
 	font-size: 92px;
 	font-weight: bold;
@@ -54,7 +56,6 @@ it should be centered on the page, have black background and have eight individu
 	text-shadow: 0px 0px 0px black;
 	text-transform: uppercase;
 	width: 100px;
-	box-shadow: 5px 5px black;
 }
 
 .individual-block:hover {
