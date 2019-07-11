@@ -14,7 +14,7 @@ class QueryPane extends React.Component {
 		const myArray = this.getQueryPaneArray(ta_contents);
 
 		// I need to call the App level function that passes all relevent info
-		const myQueryObject = {queryArray: myArray, queryType: queryData};
+		const myQueryObject = {queryArray: myArray, queryType: queryData.queryType};
 		this.props.fetchInputArray(e, myQueryObject);
 	}
 

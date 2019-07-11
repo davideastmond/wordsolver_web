@@ -6,6 +6,7 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
+import { doBasicInclusiveFilter } from './filterfunctions';
 
 
 class App extends Component {
@@ -47,6 +48,11 @@ class App extends Component {
 
 		// We've now got a filter string and a query type
 		// console.log(this.state.sortedWordList);
+		
+		if (filter_array.queryType === "Basic Filter"){
+			const result = doBasicInclusiveFilter(this.state.sortedWordList, filter_array.queryArray);
+			console.log("result is", result);
+		}
 	}
 
 	render () {
