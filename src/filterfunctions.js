@@ -1,7 +1,6 @@
 export function doBasicInclusiveFilter (wordListArray, filterStringArray) {
-	// Basic inclusive filtler
+	// Basic inclusive filter
 	
-
 	const joinedFilter = filterStringArray.join('').trim();
 	const requiredMatchingChars = getRequiredMatchingChars(filterStringArray);
 
@@ -21,7 +20,6 @@ export function doBasicInclusiveFilter (wordListArray, filterStringArray) {
 			if (joinedFilter[j] !== "/") {
 				if (joinedFilter[j] === lengthFilteredArray[i][j].toUpperCase()) {
 					rCharCount ++;
-				
 				}
 			}
 		}
@@ -32,7 +30,6 @@ export function doBasicInclusiveFilter (wordListArray, filterStringArray) {
 	
 	}
 
-	console.log("return list", returnList);
 	if (returnList.length > 0) {
 		return returnList;
 	} else {
