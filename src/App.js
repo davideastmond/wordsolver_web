@@ -6,26 +6,21 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-import { doBasicInclusiveFilter } from './filterfunctions';
+import { doBasicInclusiveFilter, doBasicExclusiveFilter } from './filterfunctions';
 
 
 class App extends Component {
 	constructor () {
 		super ();
-		
 		this.state = {sortedWordList: []};
-		
 	}
 
 	componentDidMount() {
-		
 		const wordList = document.getElementById('internal-wordlist-textarea');
 		// const wordListCountDisplay = document.getElementById("internal-wordlist-woordlistcount");
-		const wordListData = this.loadDefaultWordList();
-		wordList.value = wordListData;
-		//wordListCountDisplay.innerHTML = `Word Count: ${wordListData[1]}`;
-		
-		
+		//const wordListData = this.loadDefaultWordList();
+    // wordList.value = wordListData;
+    this.testAsyncLoadWordList();
 	}	
 
 	loadDefaultWordList = () => {
@@ -47,7 +42,22 @@ class App extends Component {
 			this.updateWordCount();
 		});
 		return bigList;
-	}
+  }
+  
+  testAsyncLoadWordList = () => {
+    // Fetch a jsonWordList
+    let filteredList = [];
+    let bigList = "";
+    fetch('./dictionary.json')
+    .then((response) => {
+      response.json().then((d) => { 
+        filteredList = d.filter((word) => (word.length > 2 && word.length <= 12))
+        this.setState({sortedWordList: filteredList});
+      })
+    })
+
+    
+  }
 
 	getInputArray = (e, filter_array) =>  {
 		// This is in charge of getting the array of characters used for a filter. This is passed down through props
@@ -60,9 +70,11 @@ class App extends Component {
 					wordListBox.value = this.state.sortedWordList;
 					this.updateWordCount();
 				});
+			} else if (filter_array.queryType === "Basic Excliusive Filter") {
+				
 			} else {
-				// Error in query
-			}
+        // Unknown query
+      }
 		
 		}
 	}
@@ -72,12 +84,13 @@ class App extends Component {
 		const wordListCountDisplay = document.getElementById("internal-wordlist-woordlistcount");
 		console.log("sorted word list length based on state", this.state.sortedWordList.length);
 		wordListCountDisplay.innerHTML = `Word Count: ${this.state.sortedWordList.length}`;
-	}
+  }
+  
 	render () {
 		return (<div>
 			<InputPane/>
 			<QueryPane fetchInputArray={this.getInputArray}/>
-			<WordListPane reloadWordList={this.loadDefaultWordList}/>
+			<WordListPane reloadWordList={this.state.sortedWordList}/>
 		</div>
 		)
 	}
