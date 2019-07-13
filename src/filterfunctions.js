@@ -51,7 +51,7 @@ function getRequiredMatchingChars(filterStringArray) {
 	}
 }
 
-function doBasicExclusiveFilter (wordListArray, filterStringArray) {
+export function doBasicExclusiveFilter (wordListArray, filterStringArray) {
   // Similar to the basic Inclusive, except it excludes filter
   const joinedFilter = filterStringArray.join('').trim();
   const requiredMatchingChars = getRequiredMatchingChars(filterStringArray);
@@ -78,5 +78,10 @@ function doBasicExclusiveFilter (wordListArray, filterStringArray) {
 			returnList.push(lengthFilteredArray[i]);
 		}
 	
+	}
+	if (returnList.length > 0) {
+		return returnList;
+	} else {
+		return null;
 	}
 }

@@ -52,7 +52,8 @@ class App extends Component {
     .then((response) => {
       response.json().then((d) => { 
         filteredList = d.filter((word) => (word.length > 2 && word.length <= 12))
-        this.setState({sortedWordList: filteredList});
+				this.setState({sortedWordList: filteredList});
+				this.updateWordCount();
       })
     })
 
@@ -61,28 +62,33 @@ class App extends Component {
 
 	getInputArray = (e, filter_array) =>  {
 		// This is in charge of getting the array of characters used for a filter. This is passed down through props
-		
-		if (filter_array.queryType === "Basic Filter"){
+		console.log(filter_array.queryType);
+
+		if (filter_array.queryType === "Basic Inclusive Filter") {
 			const result = doBasicInclusiveFilter(this.state.sortedWordList, filter_array.queryArray);
+			console.log(result);
 			if (result) {
 				this.setState({sortedWordList: result}, ()=> {
-					const wordListBox = document.getElementById('internal-wordlist-textarea');
-					wordListBox.value = this.state.sortedWordList;
 					this.updateWordCount();
 				});
-			} else if (filter_array.queryType === "Basic Excliusive Filter") {
-				
 			} else {
-        // Unknown query
-      }
-		
+				console.log("some other result");
+			}
+		} else if (filter_array.queryType == "Basic Exclusive Filter") {
+			const result = doBasicExclusiveFilter(this.state.sortedWordList, filter_array.queryArray);
+			if(result) {
+				this.setState({sortedWordList: result}, ()=> {
+					this.updateWordCount();
+				})
+			} else {
+				// No results found
+			}
 		}
 	}
 
 	updateWordCount = () => {
 		// Updates the word count based on the state
 		const wordListCountDisplay = document.getElementById("internal-wordlist-woordlistcount");
-		console.log("sorted word list length based on state", this.state.sortedWordList.length);
 		wordListCountDisplay.innerHTML = `Word Count: ${this.state.sortedWordList.length}`;
   }
   
@@ -90,7 +96,7 @@ class App extends Component {
 		return (<div>
 			<InputPane/>
 			<QueryPane fetchInputArray={this.getInputArray}/>
-			<WordListPane reloadWordList={this.state.sortedWordList}/>
+			<WordListPane wordList={this.state.sortedWordList} refreshList={this.testAsyncLoadWordList}/>
 		</div>
 		)
 	}

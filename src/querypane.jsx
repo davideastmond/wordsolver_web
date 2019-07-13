@@ -9,7 +9,7 @@ class QueryPane extends React.Component {
 		// Query Data should hold info about what kind of query it is ( basic filter etc...)
 		
 		//this.props.fetchInputArray(e, queryData);
-
+		console.log("Handle Query signal");
 		const ta_contents = document.getElementById("input-pane");
 		const myArray = this.getQueryPaneArray(ta_contents);
 
@@ -34,7 +34,7 @@ class QueryPane extends React.Component {
 					<h5> Queries </h5>
 				</div>
 				<Query queryType="Basic Inclusive Filter" queryClickButton={this.handleQuery}/>
-				<Query queryType="Basic Excliusive Filter" queryClickButton={this.handleQuery}/>
+				<Query queryType="Basic Exclusive Filter" queryClickButton={this.handleQuery}/>
 				<Query queryType="Advanced Filter" queryClickButton={this.handleQuery}/>
 			</div>
 		)

@@ -12,7 +12,7 @@ class WordListPane extends React.Component {
 				<div id="wordlist-pane-header"> 
 					<h5> Word List </h5>
 				</div>
-				<textarea id="internal-wordlist-textarea" value={this.refreshWordList(this.props.reloadWordList)} readOnly>
+				<textarea id="internal-wordlist-textarea" value={this.refreshWordList(this.props.wordList)} readOnly>
 				</textarea>
 				<div>
 					<h5 id="internal-wordlist-woordlistcount" > </h5>
