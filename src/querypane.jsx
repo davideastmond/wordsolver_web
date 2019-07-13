@@ -8,7 +8,6 @@ class QueryPane extends React.Component {
 		// A query button gets pressed - filter that up to App.js which will handle the query logic and update its state
 		// Query Data should hold info about what kind of query it is ( basic filter etc...)
 		
-		//this.props.fetchInputArray(e, queryData);
 		console.log("Handle Query signal");
 		const ta_contents = document.getElementById("input-pane");
 		const myArray = this.getQueryPaneArray(ta_contents);

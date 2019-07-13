@@ -56,8 +56,6 @@ class App extends Component {
 				this.updateWordCount();
       })
     })
-
-    
   }
 
 	getInputArray = (e, filter_array) =>  {
