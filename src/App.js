@@ -50,7 +50,8 @@ class App extends Component {
     let bigList = "";
     fetch('./dictionary.json')
     .then((response) => {
-      response.json().then((d) => { 
+			response.json()
+			.then((d) => { 
         filteredList = d.filter((word) => (word.length > 2 && word.length <= 12))
 				this.setState({sortedWordList: filteredList});
 				this.updateWordCount();
@@ -64,7 +65,7 @@ class App extends Component {
 
 		if (filter_array.queryType === "Basic Inclusive Filter") {
 			const result = doBasicInclusiveFilter(this.state.sortedWordList, filter_array.queryArray);
-			console.log(result);
+			
 			if (result) {
 				this.setState({sortedWordList: result}, ()=> {
 					this.updateWordCount();
@@ -74,12 +75,13 @@ class App extends Component {
 			}
 		} else if (filter_array.queryType == "Basic Exclusive Filter") {
 			const result = doBasicExclusiveFilter(this.state.sortedWordList, filter_array.queryArray);
-			if(result) {
+			if (result) {
 				this.setState({sortedWordList: result}, ()=> {
 					this.updateWordCount();
 				})
 			} else {
 				// No results found
+				
 			}
 		}
 	}

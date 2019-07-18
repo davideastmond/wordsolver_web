@@ -90,6 +90,12 @@ it should be centered on the page, have black background and have eight individu
 #wordlist-pane-reset-button-div {
 	text-align: right;
 }
-#wordlist-pane-reset-button {
 
+#query-pane-div-basic-filters {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 4px 4px;
+	border-color: black;
+	padding: 5px 5px 5px 5px;
+	width: 10%;
 }

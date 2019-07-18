@@ -9,6 +9,7 @@ class InputPane extends React.Component {
 	handleKeyDownEvent = (e, indexInfo) => {
 	
 		// Handle the auto tabbing
+		/*
 		let box;
 		switch (indexInfo) {
 			case 0:
@@ -56,7 +57,9 @@ class InputPane extends React.Component {
 				box.childNodes[0].focus();
 				break;
 			default:
+				
 		}
+		*/
 	}
 
 	render () {
