@@ -34,7 +34,7 @@ class QueryPane extends React.Component {
 				</div>
 				<Query queryType="Basic Inclusive Filter" queryClickButton={this.handleQuery}/>
 				<Query queryType="Basic Exclusive Filter" queryClickButton={this.handleQuery}/>
-				<Query queryType="Advanced Filter" queryClickButton={this.handleQuery}/>
+				<Query queryType="Starts With" queryClickButton={this.handleQuery}/>
 			</div>
 		)
 	}

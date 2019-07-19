@@ -7,59 +7,10 @@ class InputPane extends React.Component {
 	// We'll return a carousel of eight large text boxes
 	
 	handleKeyDownEvent = (e, indexInfo) => {
-	
-		// Handle the auto tabbing
-		/*
-		let box;
-		switch (indexInfo) {
-			case 0:
-					box = ReactDOM.findDOMNode(this.refs.box1);
-					box.childNodes[0].focus();
-				break;
-			case 1:
-					box = ReactDOM.findDOMNode(this.refs.box2);
-					box.childNodes[0].focus();
-				break;
-			case 2:
-					box = ReactDOM.findDOMNode(this.refs.box3);
-					box.childNodes[0].focus();
-				break;
-			case 3:
-					box = ReactDOM.findDOMNode(this.refs.box4);
-					box.childNodes[0].focus();
-				break;
-			case 4:
-					box = ReactDOM.findDOMNode(this.refs.box5);
-					box.childNodes[0].focus();
-				break;
-			case 5:
-					box = ReactDOM.findDOMNode(this.refs.box6);
-					box.childNodes[0].focus();
-				break;
-			case 6:
-					box = ReactDOM.findDOMNode(this.refs.box7);
-					box.childNodes[0].focus();
-				break;
-			case 7:
-					box = ReactDOM.findDOMNode(this.refs.box8);
-					box.childNodes[0].focus();
-				break;
-			case 8:
-					box = ReactDOM.findDOMNode(this.refs.box9);
-					box.childNodes[0].focus();
-				break;
-			case 9:
-					box = ReactDOM.findDOMNode(this.refs.box10);
-					box.childNodes[0].focus();
-				break;
-			case 10:
-				box = ReactDOM.findDOMNode(this.refs.box11);
-				box.childNodes[0].focus();
-				break;
-			default:
-				
+		if (e.keyCode >= 48 && e.keyCode <= 57) {
+			return true;
 		}
-		*/
+		
 	}
 
 	render () {

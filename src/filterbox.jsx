@@ -3,12 +3,19 @@ import React, { Component } from 'react';
 class CharBox extends React.Component {
 
 	sendKeyEvenWithIndex = (e) => {
-		this.props.handleKeyDownEvent(e, this.props.index);
+		console.log(e.keyCode);
+		if (e.keyCode >= 65 && e.keyCode <= 90) {
+			this.props.handleKeyDownEvent(e, this.props.index);
+		} else if (e.keyCode == 191) {
+			this.props.handleKeyDownEvent(e, this.props.index);
+		} else {
+			e.preventDefault();
+		}
 	}
 
 	render () {
 		return ( <div className= "charBox">
-			<textarea maxLength="1" className="individual-block" onKeyPress={this.sendKeyEvenWithIndex}></textarea> 	
+			<textarea maxLength="1" className="individual-block" onKeyDown={this.sendKeyEvenWithIndex}></textarea> 	
 		</div>)
 	}
 }

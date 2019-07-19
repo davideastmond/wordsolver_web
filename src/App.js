@@ -28,13 +28,11 @@ class App extends Component {
 		const wordList = require('./dictionary.json');
 		
 		let bigList = "";
-		let wordCount = 0;
 		let filteredList = [];
 		wordList.forEach((el) => {
 			if (el.length > 2 && el.length <= 12) {
 				bigList += el + " ";
 				filteredList.push(el);
-				// wordCount ++;
 			}
 		});
 
@@ -73,7 +71,7 @@ class App extends Component {
 			} else {
 				console.log("some other result");
 			}
-		} else if (filter_array.queryType == "Basic Exclusive Filter") {
+		} else if (filter_array.queryType === "Basic Exclusive Filter") {
 			const result = doBasicExclusiveFilter(this.state.sortedWordList, filter_array.queryArray);
 			if (result) {
 				this.setState({sortedWordList: result}, ()=> {
@@ -83,6 +81,8 @@ class App extends Component {
 				// No results found
 				
 			}
+		} else if (filter_array.queryArray === "Starts With") {
+			
 		}
 	}
 
