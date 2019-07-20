@@ -7,10 +7,8 @@ class InputPane extends React.Component {
 	// We'll return a carousel of eight large text boxes
 	
 	handleKeyDownEvent = (e, indexInfo) => {
-		if (e.keyCode >= 48 && e.keyCode <= 57) {
-			return true;
-		}
 		
+		// Not implemented
 	}
 
 	render () {

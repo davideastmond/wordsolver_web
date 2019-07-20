@@ -6,7 +6,7 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-import { doBasicInclusiveFilter, doBasicExclusiveFilter } from './filterfunctions';
+import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith } from './filterfunctions';
 
 
 class App extends Component {
@@ -18,30 +18,11 @@ class App extends Component {
 	componentDidMount() {
 		const wordList = document.getElementById('internal-wordlist-textarea');
 		// const wordListCountDisplay = document.getElementById("internal-wordlist-woordlistcount");
-		//const wordListData = this.loadDefaultWordList();
+		
     // wordList.value = wordListData;
     this.testAsyncLoadWordList();
 	}	
 
-	loadDefaultWordList = () => {
-		
-		const wordList = require('./dictionary.json');
-		
-		let bigList = "";
-		let filteredList = [];
-		wordList.forEach((el) => {
-			if (el.length > 2 && el.length <= 12) {
-				bigList += el + " ";
-				filteredList.push(el);
-			}
-		});
-
-		this.setState({sortedWordList: filteredList}, ()=> {
-			this.updateWordCount();
-		});
-		return bigList;
-  }
-  
   testAsyncLoadWordList = () => {
     // Fetch a jsonWordList
     let filteredList = [];
@@ -50,7 +31,10 @@ class App extends Component {
     .then((response) => {
 			response.json()
 			.then((d) => { 
-        filteredList = d.filter((word) => (word.length > 2 && word.length <= 12))
+
+        filteredList = d.filter((word) => (word.length > 2 && word.length <= 12)) 
+				filteredList = filteredList.map(x => x.toUpperCase())
+				
 				this.setState({sortedWordList: filteredList});
 				this.updateWordCount();
       })
@@ -81,8 +65,12 @@ class App extends Component {
 				// No results found
 				
 			}
-		} else if (filter_array.queryArray === "Starts With") {
-			
+		} else if (filter_array.queryType === "Starts With") {
+			// I can validate the queryArray and make sure it contains only alphanumberic
+			if (filter_array.queryArray.includes("/")) {
+				return;
+			}
+			const result = doStartsWith(this.state.sortedWordList, filter_array.queryArray);
 		}
 	}
 

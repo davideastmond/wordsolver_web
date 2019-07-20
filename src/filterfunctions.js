@@ -85,3 +85,14 @@ export function doBasicExclusiveFilter (wordListArray, filterStringArray) {
 		return null;
 	}
 }
+
+export function doStartsWith(wordListArray, filterStringArray) {
+	/* filter string array should have characters */
+	// For the filter string, we want to validate the input, which means removing any "/" in the array and just get the alpahbet chars
+	
+	const startsWithString = filterStringArray.join('');
+	console.log(startsWithString);
+	
+	// Convert the wordList to
+	console.log(wordListArray[0] + " and " + startsWithString);
+}
