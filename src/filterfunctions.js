@@ -95,4 +95,13 @@ export function doStartsWith(wordListArray, filterStringArray) {
 	
 	// Convert the wordList to
 	console.log(wordListArray[0] + " and " + startsWithString);
+	let filteredResults = wordListArray.filter((word)=> {
+		if (word.startsWith(startsWithString)) {
+			return word;
+		}
+	});
+
+	if (filteredResults.length > 0) {
+		return filteredResults;
+	}
 }

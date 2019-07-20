@@ -15,7 +15,7 @@ class WordListPane extends React.Component {
 				<textarea id="internal-wordlist-textarea" value={this.refreshWordList(this.props.wordList)} readOnly>
 				</textarea>
 				<div>
-					<h5 id="internal-wordlist-woordlistcount" > </h5>
+					<h5 id="internal-wordlist-woordlistcount"> Word Count: {this.props.wordList.length} </h5>
 				</div>
 				<div id="wordlist-pane-reset-button-div">
 					<button id="wordlist-pane-reset-button" className="btn btn-info" onClick={this.props.refreshList}>Reset</button>
