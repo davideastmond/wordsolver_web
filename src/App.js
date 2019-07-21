@@ -6,7 +6,7 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith } from './filterfunctions';
+import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih } from './filterfunctions';
 
 
 class App extends Component {
@@ -57,7 +57,7 @@ class App extends Component {
 					
 				});
 			} else {
-				throw "no results";
+				
 				console.log("some other result");
 			}
 		} else if (filter_array.queryType === "Basic Exclusive Filter") {
@@ -72,7 +72,7 @@ class App extends Component {
 				})
 			} else {
 				// No results found
-				throw "no results";
+				alert("No results");
 			}
 		} else if (filter_array.queryType === "Starts With") {
 			// I can validate the queryArray and make sure it contains only alphanumberic
@@ -85,6 +85,18 @@ class App extends Component {
 				this.setState({sortedWordList: result});
 			} else {
 				// no results found
+				alert("No results");
+			}
+		} else if (filter_array.queryType === "Ends With") {
+			if (filter_array.queryArray.includes("/")) {
+				alert('Forward slash not allowed in this type of query');
+				return;
+			}
+			const result = doEndsWtih(this.state.sortedWordList, filter_array.queryArray);
+			if (result) {
+				this.setState({sortedWordList: result});
+			} else {
+				alert("No results");
 			}
 		}
 	}

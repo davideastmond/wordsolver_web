@@ -7,7 +7,7 @@ class Query extends React.Component {
 		this.props.queryClickButton(e, {queryType: this.props.queryType});
 	}
 	render () {
-		return (<button className="btn btn-success" onClick={this.handleQueryClickButtonLocal}> {this.props.queryType} </button>)
+		return (<button className={this.props.buttonStyle} onClick={this.handleQueryClickButtonLocal}> {this.props.queryType} </button>)
 	}
 }
 

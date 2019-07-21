@@ -91,12 +91,25 @@ export function doStartsWith(wordListArray, filterStringArray) {
 	// For the filter string, we want to validate the input, which means removing any "/" in the array and just get the alpahbet chars
 	
 	const startsWithString = filterStringArray.join('');
-	console.log(startsWithString);
-	
+
 	// Convert the wordList to
-	console.log(wordListArray[0] + " and " + startsWithString);
+
 	let filteredResults = wordListArray.filter((word)=> {
 		if (word.startsWith(startsWithString)) {
+			return word;
+		}
+	});
+
+	if (filteredResults.length > 0) {
+		return filteredResults;
+	}
+}
+
+export function doEndsWtih(wordListArray, filterStringArray) {
+	const endsWithString = filterStringArray.join('');
+
+	let filteredResults = wordListArray.filter((word) => {
+		if (word.endsWith(endsWithString)) {
 			return word;
 		}
 	});
