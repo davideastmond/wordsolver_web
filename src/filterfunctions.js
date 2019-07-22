@@ -118,3 +118,28 @@ export function doEndsWtih(wordListArray, filterStringArray) {
 		return filteredResults;
 	}
 }
+
+export function doContainsIndividualCharacters(wordListArray, filterStringArray) {
+	const charMatchString = filterStringArray.join('');
+	const requiredMatchesInteger = charMatchString.length;
+	
+	let filteredResults = wordListArray.filter((word) => {
+		let bumper = 0;
+		for (let i = 0; i < charMatchString.length; i++) {
+			if (word.indexOf(charMatchString[i]) >= 0) {
+				bumper++;
+			}
+		}
+		if (bumper === requiredMatchesInteger) {
+			return word;
+		} else {
+			bumper = 0;
+		}
+	});
+
+	if (filteredResults.length > 0) {
+		return filteredResults;
+	}
+
+	
+}

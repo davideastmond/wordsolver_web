@@ -22,9 +22,10 @@ it should be centered on the page, have black background and have eight individu
 	box-shadow: 5px, 5px, chartreuse;
 }
 
-.btn-success {
+.btn-success, .btn-primary {
 	margin: 2px;
 }
+
 .charBox {
 	display: inline;
 

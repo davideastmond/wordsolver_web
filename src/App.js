@@ -6,7 +6,7 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih } from './filterfunctions';
+import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih, doContainsIndividualCharacters } from './filterfunctions';
 
 
 class App extends Component {
@@ -97,6 +97,22 @@ class App extends Component {
 				this.setState({sortedWordList: result});
 			} else {
 				alert("No results");
+			}
+		} else if (filter_array.queryType === "Contains Indv Chars") {
+			if (filter_array.queryArray.includes("/")) {
+				alert('Forward slash not allowed in this type of query');
+				return;
+			}
+			const result = doContainsIndividualCharacters(this.state.sortedWordList, filter_array.queryArray);
+			if (result) {
+				this.setState({sortedWordList: result});
+			} else {
+				alert("No results");
+			}
+		} else if (filter_array.queryType === "Contains String of Chars") {
+			if (filter_array.queryArray.includes("/")) {
+				alert('Forward slash not allowed in this type of query');
+				return;
 			}
 		}
 	}
