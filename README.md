@@ -34,7 +34,8 @@ React.js,
 HTML / CSS / Javascript 
 
 ## Screen Captures
-![Preliminary UI](https://github.com/davideastmond/wordsolver_web/blob/master/res/wordSolver.JPG?raw=true)
+![Preliminary UI](https://github.com/davideastmond/wordsolver_web/blob/master/res/wordSolverJul222019.png?raw=true)
+
 
 ## Installation
 
