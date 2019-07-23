@@ -6,8 +6,8 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih, doContainsIndividualCharacters } from './filterfunctions';
-
+import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih, doContainsIndividualCharacters, doesNotContainIndividualCharacters } from './filterfunctions';
+import { doContainsStringOfCharacters } from './filterfunctions';
 
 class App extends Component {
 	constructor () {
@@ -60,6 +60,7 @@ class App extends Component {
 				
 				console.log("some other result");
 			}
+
 		} else if (filter_array.queryType === "Basic Exclusive Filter") {
 			if (!filter_array.queryArray.includes("/")) {
 				
@@ -74,6 +75,7 @@ class App extends Component {
 				// No results found
 				alert("No results");
 			}
+
 		} else if (filter_array.queryType === "Starts With") {
 			// I can validate the queryArray and make sure it contains only alphanumberic
 			if (filter_array.queryArray.includes("/")) {
@@ -87,6 +89,7 @@ class App extends Component {
 				// no results found
 				alert("No results");
 			}
+
 		} else if (filter_array.queryType === "Ends With") {
 			if (filter_array.queryArray.includes("/")) {
 				alert('Forward slash not allowed in this type of query');
@@ -98,6 +101,7 @@ class App extends Component {
 			} else {
 				alert("No results");
 			}
+
 		} else if (filter_array.queryType === "Contains Indv Chars") {
 			if (filter_array.queryArray.includes("/")) {
 				alert('Forward slash not allowed in this type of query');
@@ -109,11 +113,29 @@ class App extends Component {
 			} else {
 				alert("No results");
 			}
+		
+		} else if (filter_array.queryType === "Does Not Contain Indv Chars") {
+			if (filter_array.queryArray.includes("/")) {
+				alert('Forward slash not allowed in this type of query');
+				return;
+			}
+
+			const result = doesNotContainIndividualCharacters(this.state.sortedWordList, filter_array.queryArray);
+			
+			if (result) {
+				this.setState({sortedWordList: result});
+			} else {
+				alert("No results");
+			}
+
 		} else if (filter_array.queryType === "Contains String of Chars") {
 			if (filter_array.queryArray.includes("/")) {
 				alert('Forward slash not allowed in this type of query');
 				return;
 			}
+			const result = doContainsStringOfCharacters(this.state.sortedWordList, filter_array.queryArray) 
+
+			
 		}
 	}
 
