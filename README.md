@@ -12,7 +12,11 @@ This app helps users play Scrabble, hang man or Words With Friends.
 To use this app, you need to query the word list based on different query parameters. Querying essentially filters the list based on the 
 query parameters you specify, gradually widdling down the list to a narrow choice of words that will serve your purposes.
 
-The rectangles at the top are single-input textarea boxes where the user will input their query. The  basic things you can do in this app is a basic inclusive filter or a basic exclusive filter.
+The rectangles at the top are single-input textarea boxes where the user will input their query. 
+
+The 2 basic things you can do in this app are:
+- a basic inclusive filter, or 
+- a basic exclusive filter.
 
 A basic filter is something you'd type into the text input boxes (those rectangles) like so:
 
