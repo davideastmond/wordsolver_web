@@ -7,7 +7,7 @@ import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
 import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih, doContainIndividualCharacters, doNotContainIndividualCharacters } from './filterfunctions';
-import { doContainStringOfCharacters, doNotContainStringOfCharacters } from './filterfunctions';
+import { doContainStringOfCharacters, doNotContainStringOfCharacters, doBeginsWithEndsWith } from './filterfunctions';
 
 class App extends Component {
 	constructor () {
@@ -23,8 +23,11 @@ class App extends Component {
     this.LoadWordListAsync();
 	}	
 
-  LoadWordListAsync = () => {
-    // Fetch a jsonWordList
+  LoadWordListAsync = (e) => {
+		// Fetch a jsonWordList
+		console.log(e);
+		
+		
     let filteredList = [];
     let bigList = "";
     fetch('./dictionary.json')
@@ -36,10 +39,22 @@ class App extends Component {
 				filteredList = filteredList.map(x => x.toUpperCase());
 				
 				this.setState({sortedWordList: filteredList});
-				
+			
       })
-    })
+		})
+		
+		// Call a function to clear the input boxes
+		this.resetInputBoxes();
   }
+
+	resetInputBoxes () {
+		/* This function clears the text boxes. We'll use HTML / JS to do so */
+
+		const inputPaneElement = document.getElementsByClassName('individual-block');
+		for (let i = 0; i < inputPaneElement.length; i++ ) {
+			inputPaneElement[i].value = "";
+		}
+	}
 
 	getInputArray = (e, filter_array) =>  {
 		// This is in charge of getting the array of characters used for a filter. This is passed down through props
@@ -144,10 +159,30 @@ class App extends Component {
 			}
 			
 		} else if (filter_array.queryType === "Does Not Contain String of Chars") {
+			if (filter_array.queryArray.includes("/")) {
+				alert('Forward slash not allowed in this type of query');
+				return;
+			}
 			const result = doNotContainStringOfCharacters(this.state.sortedWordList, filter_array.queryArray);
+			if (result) {
+				this.setState({sortedWordList: result});
+			} else {
+				alert('No results');
+			}
 
 		} else if (filter_array.queryType === "Begins With Ends With") {
+			if (filter_array.queryArray.includes("/")) {
+				alert('Forward slash not allowed in this type of query');
+				return;
+			}
 
+			const result = doBeginsWithEndsWith(this.state.sortedWordList, filter_array.queryArray);
+
+			if (result) {
+				this.setState({sortedWordList: result}) 
+			} else  {
+				alert("no result");
+			}
 		}
 	}
 

@@ -199,5 +199,41 @@ export function doContainStringOfCharacters(wordListArray, filterStringArray) {
 }
 
 export function doNotContainStringOfCharacters(wordListArray, filterStringArray) {
+	/** Return words that do not contain the contiguous string filterString array */
+	const charMatchString = filterStringArray.join('');
+
+	let filteredResults = wordListArray.filter((word) => {
+		if (word.indexOf(charMatchString) < 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+
+	if (filteredResults.length > 0) {
+		return filteredResults;
+	}
+}
+
+export function doBeginsWithEndsWith(wordListArray, filterStringArray) {
+	/** The filter string is an array of two characters 
+	 * filterStringArray[0] is the first character of the word to match, and index filterStringArray[length-1] is the last.
+	 * Both matches must be true to have the word in the filter
+	 */
+	
+	 let filterString = filterStringArray.join('');
+	 console.log("Do begins ends called");
+	 let filteredResults = wordListArray.filter((word) => {
+		 if (filterString[0] === word[0] && filterString[filterString.length - 1] === word[word.length - 1]) {
+			 return true;
+		 }
+	 });
+
+	 if (filteredResults.length > 0) {
+		return filteredResults;
+	 }
+}
+
+export function doesNotBeginWithEndsWith (wordListArray, filterStringArray) {
 
 }

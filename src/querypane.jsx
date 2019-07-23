@@ -37,7 +37,7 @@ class QueryPane extends React.Component {
 				<Query caption="Starts With" queryType="Starts With" queryClickButton={this.handleQuery} buttonStyle="btn btn-success"/>
 				<Query caption="Ends With" queryType="Ends With" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
 				<Query caption="Contains Indv Chars" queryType="Contains Indv Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
-				<Query caption="Does Not Contain Indv Chars"queryType="Does Not Contain Indv Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
+				<Query caption="Does Not Contain Indv Chars" queryType="Does Not Contain Indv Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
 				<Query caption="Contains String of Chars" queryType="Contains String of Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
 				<Query caption="Does Not Contain String of Chars" queryType="Does Not Contain String of Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
 				<Query caption="Begins With Ends With" queryType="Begins With Ends With" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>

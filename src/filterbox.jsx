@@ -6,9 +6,9 @@ class CharBox extends React.Component {
 		console.log(e.keyCode);
 		if (e.keyCode >= 65 && e.keyCode <= 90) {
 			this.props.handleKeyDownEvent(e, this.props.index);
-		} else if (e.keyCode == 191) {
+		} else if (e.keyCode === 191) {
 			this.props.handleKeyDownEvent(e, this.props.index);
-		} else if (e.keyCode == 8 || e.keyCode == 18) {
+		} else if (e.keyCode === 8 || e.keyCode === 46) {
 			e.target.value = "";
 		
 		} else {
