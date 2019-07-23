@@ -14,6 +14,8 @@ query parameters you specify, gradually widdling down the list to a narrow choic
 
 The rectangles at the top are single-input textarea boxes where the user will input their query. 
 
+### Basic Queries
+
 The 2 basic things you can do in this app are:
 - a basic inclusive filter, or 
 - a basic exclusive filter.
@@ -22,14 +24,24 @@ A basic filter is something you'd type into the text input boxes (those rectangl
 
 //ION
 
-Where, in the above case, the word is a 5-letter word ending in the characters ION. Hit the basic inclusive filter button and the word list will filter everything out to only show words that match that query (ie, 5-letter words ending in "ION"). The exclusive filter will do exactly the opposite (exclude words that do not match the query).
+Where, in the above case, the word is a 5-letter word ending in the characters ION.
+
+The forward slashes serve as wild-card characters. 
+
+Hit the basic inclusive filter button and the word list will filter everything to only show words that match that query (ie, 5-letter words ending in "ION"). 
+The exclusive filter will do exactly the opposite (exclude words that do not match the query).
+
+### Future Features
 
 There will be various types of queries available, and they will be added via buttons that will appear in the query pane.
 
-I also plan to add other query strings such as
+I also plan to add other query strings such as:
 
-- StartsWith and EndsWith
-- Contains/Does not Contain individual characters
+- StartsWith and EndsWith a contiguous string pattern
+- Contains / does not contain individual characters
+- Contains / does not contain a contiguous string pattern
+
+- Filter or include words of n length
 
 ## Tech skills
 
@@ -47,3 +59,6 @@ Clone the repo.
 Run npm i
 
 ## Dependencies
+
+- bootstrap
+- react-alert
