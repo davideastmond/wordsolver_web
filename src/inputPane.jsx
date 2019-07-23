@@ -26,7 +26,9 @@ class InputPane extends React.Component {
 				<CharBox index={9}  handleKeyDownEvent={this.handleKeyDownEvent} ref="box9"/>
 				<CharBox index={10} handleKeyDownEvent={this.handleKeyDownEvent} ref="box10"/>
 				<CharBox index={11} handleKeyDownEvent={this.handleKeyDownEvent} ref="box11"/>
+				
 			</div>
+			
 		)
 	}
 }

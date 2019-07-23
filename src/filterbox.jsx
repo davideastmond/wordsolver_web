@@ -8,6 +8,9 @@ class CharBox extends React.Component {
 			this.props.handleKeyDownEvent(e, this.props.index);
 		} else if (e.keyCode == 191) {
 			this.props.handleKeyDownEvent(e, this.props.index);
+		} else if (e.keyCode == 8 || e.keyCode == 18) {
+			e.target.value = "";
+		
 		} else {
 			e.preventDefault();
 		}

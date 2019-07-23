@@ -6,8 +6,8 @@ import InputPane from './inputPane';
 import { Component}  from 'react';
 import QueryPane from './querypane';
 import WordListPane from './wordlistpane';
-import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih, doContainsIndividualCharacters, doesNotContainIndividualCharacters } from './filterfunctions';
-import { doContainsStringOfCharacters } from './filterfunctions';
+import { doBasicInclusiveFilter, doBasicExclusiveFilter, doStartsWith, doEndsWtih, doContainIndividualCharacters, doNotContainIndividualCharacters } from './filterfunctions';
+import { doContainStringOfCharacters, doNotContainStringOfCharacters } from './filterfunctions';
 
 class App extends Component {
 	constructor () {
@@ -107,7 +107,7 @@ class App extends Component {
 				alert('Forward slash not allowed in this type of query');
 				return;
 			}
-			const result = doContainsIndividualCharacters(this.state.sortedWordList, filter_array.queryArray);
+			const result = doContainIndividualCharacters(this.state.sortedWordList, filter_array.queryArray);
 			if (result) {
 				this.setState({sortedWordList: result});
 			} else {
@@ -120,22 +120,34 @@ class App extends Component {
 				return;
 			}
 
-			const result = doesNotContainIndividualCharacters(this.state.sortedWordList, filter_array.queryArray);
+			const result = doNotContainIndividualCharacters(this.state.sortedWordList, filter_array.queryArray);
 			
 			if (result) {
-				this.setState({sortedWordList: result});
+				this.setState({ sortedWordList: result });
 			} else {
 				alert("No results");
 			}
 
+
 		} else if (filter_array.queryType === "Contains String of Chars") {
+	
 			if (filter_array.queryArray.includes("/")) {
 				alert('Forward slash not allowed in this type of query');
 				return;
 			}
-			const result = doContainsStringOfCharacters(this.state.sortedWordList, filter_array.queryArray) 
+			const result = doContainStringOfCharacters(this.state.sortedWordList, filter_array.queryArray) 
 
+			if (result) {
+				this.setState({sortedWordList: result});
+			} else {
+				alert('No results');
+			}
 			
+		} else if (filter_array.queryType === "Does Not Contain String of Chars") {
+			const result = doNotContainStringOfCharacters(this.state.sortedWordList, filter_array.queryArray);
+
+		} else if (filter_array.queryType === "Begins With Ends With") {
+
 		}
 	}
 

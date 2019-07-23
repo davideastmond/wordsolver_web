@@ -132,7 +132,7 @@ export function doEndsWtih(wordListArray, filterStringArray) {
 	}
 }
 
-export function doContainsIndividualCharacters(wordListArray, filterStringArray) {
+export function doContainIndividualCharacters(wordListArray, filterStringArray) {
 	/** This function only returns words that include all of the individual characters in the filter string 
 	 * example input: PHI - only returns words that contain individually all of those three characters no matter where they are
 	 * positioned in the word. The number of character matches equals the length of the filterString
@@ -159,7 +159,7 @@ export function doContainsIndividualCharacters(wordListArray, filterStringArray)
 	}
 }
 
-export function doesNotContainIndividualCharacters(wordListArray, filterStringArray) {
+export function doNotContainIndividualCharacters(wordListArray, filterStringArray) {
 	/** Returns words that do not have any of the individual characters in the filter string. All characters each individually
 	 * must not be present in the list that is returned.
 	 */
@@ -181,6 +181,23 @@ export function doesNotContainIndividualCharacters(wordListArray, filterStringAr
 		return filteredResults;
 	}
 }
-export function doContainsStringOfCharacters(wordListArray, filterStringArray) {
+export function doContainStringOfCharacters(wordListArray, filterStringArray) {
+	/** Returns words that contain the contiguous string filterStringArray, anywhere in the string, irrespective of stirng length */
+	const charMatchString = filterStringArray.join('');
+	
+	let filteredResults = wordListArray.filter((word) => {
+		if (word.indexOf(charMatchString) > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+
+	if (filteredResults.length > 0) {
+		return filteredResults;
+	}
+}
+
+export function doNotContainStringOfCharacters(wordListArray, filterStringArray) {
 
 }

@@ -32,13 +32,15 @@ class QueryPane extends React.Component {
 				<div id="query-pane-header"> 
 					<h5> Queries </h5>
 				</div>
-				<Query queryType="Basic Inclusive Filter" queryClickButton={this.handleQuery} buttonStyle="btn btn-success"/>
-				<Query queryType="Basic Exclusive Filter" queryClickButton={this.handleQuery} buttonStyle="btn btn-success"/>
-				<Query queryType="Starts With" queryClickButton={this.handleQuery} buttonStyle="btn btn-success"/>
-				<Query queryType="Ends With" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
-				<Query queryType="Contains Indv Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
-				<Query queryType="Does Not Contain Indv Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
-				<Query queryType="Contains String of Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
+				<Query caption="Basic Inclusive Filter" queryType="Basic Inclusive Filter" queryClickButton={this.handleQuery} buttonStyle="btn btn-success"/>
+				<Query caption="Basic Exclusive Filter" queryType="Basic Exclusive Filter" queryClickButton={this.handleQuery} buttonStyle="btn btn-success"/>
+				<Query caption="Starts With" queryType="Starts With" queryClickButton={this.handleQuery} buttonStyle="btn btn-success"/>
+				<Query caption="Ends With" queryType="Ends With" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
+				<Query caption="Contains Indv Chars" queryType="Contains Indv Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
+				<Query caption="Does Not Contain Indv Chars"queryType="Does Not Contain Indv Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
+				<Query caption="Contains String of Chars" queryType="Contains String of Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
+				<Query caption="Does Not Contain String of Chars" queryType="Does Not Contain String of Chars" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
+				<Query caption="Begins With Ends With" queryType="Begins With Ends With" queryClickButton={this.handleQuery} buttonStyle="btn btn-primary"/>
 			</div>
 		)
 	}
