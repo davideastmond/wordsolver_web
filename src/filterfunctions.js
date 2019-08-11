@@ -235,5 +235,11 @@ export function doBeginsWithEndsWith(wordListArray, filterStringArray) {
 }
 
 export function doesNotBeginWithEndsWith (wordListArray, filterStringArray) {
+	let filterString = filterStringArray.join('');
+	let filteredResults = wordListArray.filter((word) => { return filterString[0] !== word[0] && filterString[1] !== word[word.length - 1]; });
+
+	if (filteredResults.length > 0) {
+		return filteredResults;
+	}
 
 }
