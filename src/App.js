@@ -23,13 +23,11 @@ class App extends Component {
     this.LoadWordListAsync();
 	}	
 
-  LoadWordListAsync = (e) => {
+  LoadWordListAsync = (e, message) => {
 		// Fetch a jsonWordList
-		console.log(e);
-		
-		
     let filteredList = [];
-    let bigList = "";
+		let bigList = "";
+		
     fetch('./dictionary.json')
     .then((response) => {
 			response.json()
@@ -38,7 +36,11 @@ class App extends Component {
         filteredList = d.filter((word) => (word.length > 2 && word.length <= 12)) 
 				filteredList = filteredList.map(x => x.toUpperCase());
 				
-				this.setState({sortedWordList: filteredList});
+				this.setState({sortedWordList: filteredList}, ()=> {
+					// Re-enable the refresh button once state is set, using callback
+					document.getElementById("wordlist-pane-reset-button").disabled = false;
+				});
+				
 			
       })
 		})

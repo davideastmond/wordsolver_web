@@ -7,9 +7,10 @@ class WordListPane extends React.Component {
     return wordListData.join(" ");
 	}
 
+	// Refreshes and reloads the word list
 	commandRefresh = (e) => {
-		console.log(e);
 		this.props.refreshList(e);
+		e.target.disabled = true;
 	}
 	
 	render () {
