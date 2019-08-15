@@ -186,11 +186,7 @@ export function doContainStringOfCharacters(wordListArray, filterStringArray) {
 	const charMatchString = filterStringArray.join('');
 	
 	let filteredResults = wordListArray.filter((word) => {
-		if (word.indexOf(charMatchString) > 0 ) {
-			return true;
-		} else {
-			return false;
-		}
+		return word.includes(charMatchString);
 	});
 
 	if (filteredResults.length > 0) {
@@ -203,11 +199,7 @@ export function doNotContainStringOfCharacters(wordListArray, filterStringArray)
 	const charMatchString = filterStringArray.join('');
 
 	let filteredResults = wordListArray.filter((word) => {
-		if (word.indexOf(charMatchString) < 0 ) {
-			return true;
-		} else {
-			return false;
-		}
+		return !word.includes(charMatchString);
 	});
 
 	if (filteredResults.length > 0) {
