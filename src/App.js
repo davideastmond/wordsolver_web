@@ -43,7 +43,9 @@ class App extends Component {
 				
 			
       })
-		})
+		}).catch((err) => {
+			alert("unable to contact server!");
+		});
 		
 		// Call a function to clear the input boxes
 		this.resetInputBoxes();
