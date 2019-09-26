@@ -11,123 +11,123 @@
 
 /* This is a div container that contains each individual block.
 it should be centered on the page, have black background and have eight individual text blocks inside it*/
- #input-pane {
-	border-style: dotted;
-	border-width: 2px;
-	background-color: rgb(48, 51, 51);
-	text-align: center;
-	margin-top: 5%;
-	padding-top: .5%;
-	padding-bottom: .5%;
-	box-shadow: 5px, 5px, chartreuse;
+#input-pane {
+  border-style: dotted;
+  border-width: 2px;
+  background-color: rgb(48, 51, 51);
+  text-align: center;
+  margin-top: 5%;
+  padding-top: .5%;
+  padding-bottom: .5%;
+  box-shadow: 5px, 5px, chartreuse;
 }
 
 .btn-success, .btn-primary {
-	margin: 2px;
+  margin: 2px;
 }
 
 .charBox {
-	display: inline;
+  display: inline;
 
 }
 
 /* */
 #query-pane-header {
-	text-align: center;
+  text-align: center;
 }
 
 #wordlist-pane-header {
-	text-align: center;
+  text-align: center;
 }
 
 /* This is each individual input box. Forced uppercase, no cursor, fixed size */
 .individual-block {
-	border-color: black;
-	border-radius: 5%;
-	border-style: solid;
-	border-width: 2px;
-	box-shadow: 5px 5px black;
-	color: transparent;
-	font-size: 92px;
-	font-weight: bold;
-	height: 120px;
-	overflow: hidden;
-	resize: none;
-	text-align: center;
-	text-shadow: 0px 0px 0px black;
-	text-transform: uppercase;
-	width: 100px;
+  border-color: black;
+  border-radius: 5%;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 5px 5px black;
+  color: transparent;
+  font-size: 92px;
+  font-weight: bold;
+  height: 120px;
+  overflow: hidden;
+  resize: none;
+  text-align: center;
+  text-shadow: 0px 0px 0px black;
+  text-transform: uppercase;
+  width: 100px;
 }
 
 .individual-block:hover {
-	cursor: pointer;
-	background-color: lightblue;
+  cursor: pointer;
+  background-color: lightblue;
 }
 
 /* This is where the query commands will be*/
 #query-pane-div {
-	padding: 10px 10px;
-	border-style: solid;
-	margin-top: 2%;
-	box-shadow: 5px 5px #494848;
+  padding: 10px 10px;
+  border-style: solid;
+  margin-top: 2%;
+  box-shadow: 5px 5px #494848;
 }
 
 #wordlist-pane {
-	margin-top: 2%;
-	padding: 10px 10px;
-	border-style: solid;
-	box-shadow: 5px 5px #494848;
+  margin-top: 2%;
+  padding: 10px 10px;
+  border-style: solid;
+  box-shadow: 5px 5px #494848;
 }
 
 #internal-wordlist-textarea {
-	resize: none;
-	text-transform: uppercase;
-	border-style: dashed;
-	height: 400px;
-	width: 100%;
-	box-shadow: 4px 4px #494848;
+  resize: none;
+  text-transform: uppercase;
+  border-style: dashed;
+  height: 400px;
+  width: 100%;
+  box-shadow: 4px 4px #494848;
 }
 
 #wordlist-pane-reset-button-div {
-	text-align: right;
+  text-align: right;
 }
 
 #query-pane-div-basic-filters {
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 4px 4px;
-	border-color: black;
-	padding: 5px 5px 5px 5px;
-	width: 10%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px 4px;
+  border-color: black;
+  padding: 5px 5px 5px 5px;
+  width: 10%;
 }
 
 @media only screen and (max-width: 812px) {
-	.individual-block {
-		border-color: black;
-		border-radius: 5%;
-		border-style: solid;
-		border-width: 2px;
-		box-shadow: 5px 5px black;
-		color: transparent;
-		font-size: 35px;
-		font-weight: bold;
-		height: 56px;
-		overflow: hidden;
-		resize: none;
-		text-align: center;
-		text-shadow: 0px 0px 0px black;
-		text-transform: uppercase;
-		width: 8%;
-	}
+  .individual-block {
+    border-color: black;
+    border-radius: 5%;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 5px 5px black;
+    color: transparent;
+    font-size: 35px;
+    font-weight: bold;
+    height: 56px;
+    overflow: hidden;
+    resize: none;
+    text-align: center;
+    text-shadow: 0px 0px 0px black;
+    text-transform: uppercase;
+    width: 8%;
+  }
 
-	#input-pane {
-		border-style: dotted;
-		border-width: 2px;
-		background-color: rgb(48, 51, 51);
-		text-align: center;
-		margin-top: 5%;
-		padding-top: .5%;
-		padding-bottom: .5%;
-		box-shadow: 5px, 5px, chartreuse;
-	}
+  #input-pane {
+    border-style: dotted;
+    border-width: 2px;
+    background-color: rgb(48, 51, 51);
+    text-align: center;
+    margin-top: 5%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    box-shadow: 5px, 5px, chartreuse;
+  }
 }
